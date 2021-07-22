@@ -17,7 +17,7 @@
 <body>
   <!--[START] FIRST PAGE [START]-->
   <section class="section first-page">
-    <div class="container menu show">
+    <div class="container menu hide">
         <!--Title, Subtitle, Description-->
         <h1 class="title">
             What Are We Having?
@@ -26,7 +26,7 @@
         Meal and Drink Recipes
         </h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam corrupti id tempora nihil dolorum asperiores repudiandae assumenda impedit. Molestias hic corporis nobis incidunt commodi? Odit explicabo delectus molestias. Cumque, natus?
+          Tired of spending a lot of time thinking about what to eat? Can't decide what to cook tonight? Let us help you! Enter your diet and drink preference below and we'll provide you some recipes to try out!
         </p>
         <br>
         <!--Diet Preference Input-->
@@ -42,7 +42,6 @@
                   </select>
                 </div>
             </div>
-        </div>
         <!--Drink Preference Input-->
         <div class="field">
           <label class="label">Drink Preference</label>
@@ -69,24 +68,38 @@
   <!--[START] MAIN PAGE [START]-->
   <section class="section main-page">
     <!--Saved Recipes-->
-    <div container="container saved-recipes show">
-
+    <div class="container saved-recipes show">
+      <div class = "sr-text">
+      <h3>Saved Recipes</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis id quam quas exercitationem tempora, expedita nemo quae, necessitatibus, eum quos ad non ut ab nihil nostrum aliquid maxime delectus? Distinctio?</p>
     </div>
-    <!--Food Picture-->
-    <div container="container food-pic show">
-
-    </div>
-    <!--Food Picture-->
-    <div container="container food-inst show">
-
-    </div>
-  <!--Food Picture-->
-  <div container="container drink-pic show">
-
   </div>
-</div>
-<!--Food Picture-->
-<div container="container drink-inst show">
+
+    <!--Food Picture-->
+    <div class="columns m-recipe show">
+      <div class="column is-one-third" id="meal">
+        <img src ="food-pic.jpg" id="meal-pic">
+      </div>
+      <div class="column">
+        <h3>Meal Recipe</h3>
+        <p>Name:</p>
+        <p>Summary:</p>
+        <p>Link:</p>
+      </div>
+    </div>
+    <!--Food Picture-->
+    <div class="columns d-recipe show">
+      <div class="column">
+        <h3>Drink Recipe</h3>
+        <p>Name:</p>
+        <p>Summary:</p>
+        <p>Link:</p>
+      </div>
+      <div class="column is-one-third" id="drink">
+        <img src ="drink-pic.jpg" id="drink-pic">
+      </div>
+      
+    </div>
 
 </div>
 
@@ -96,3 +109,5 @@
   </section>
 </body>
 </html>
+
+

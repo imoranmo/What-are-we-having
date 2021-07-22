@@ -1,12 +1,26 @@
 body {
+    background-image: url("lemon1.jpg");
+    background-size: cover;
     font-family: 'Krub', sans-serif;
     position: relative;
+}
+h3{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Luckiest Guy', cursive;;
+    color:#000;
+    text-shadow:
+	    -1px -1px 0 #fff,
+	    1px -1px 0 #fff,
+	    -1px 1px 0 #fff,
+	    1px 1px 0 #fff;
 }
 .hide {
     display: none;
 }
 .show {
-    display:block
+    
 }
 .first-page {
     margin: 0;
@@ -44,4 +58,64 @@ body {
 #submit {
     background-color: rgb(250, 245, 178);
     color: #000;
+}
+.saved-recipes {
+  border-color: #66cc99;
+  background-color:  #66cc99;
+  position: absolute;
+  border-style: double;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 98%;
+  margin: 1%;
+ 
+}
+.m-recipe {
+    border-color: #66cc99;
+    background-color:  #66cc99;
+    position: absolute;
+    border-style: double;
+    border-radius: 5px;
+    top: 0;
+    left: 31.5%;
+    width: 66.5%;
+    height: 48%;
+    margin: 1%;
+  
+    
+}
+#meal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+#meal-pic{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+.d-recipe {
+    background-color:  #66cc99;
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    left: 31.5%;
+    width: 66.5%;
+    height: 48%;
+    margin: 1%;
+}
+
+#drink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+#drink-pic{
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
 }

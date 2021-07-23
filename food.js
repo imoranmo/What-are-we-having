@@ -1,16 +1,32 @@
 var foodName = document.querySelector('.foodname')
 var foodSummary = document.querySelector('.foodsummary')
+var submitBtn = document.querySelector ('#submit')
 
 function dietRestrict() {
+  var f= document.getElementById("food");
+  var result = f.options[f.selectedIndex].value;
+  
+  if(result === 'Select...'){
+    return
+  } else if ( result === 'No Restrictions'){
 
+    var diet = 'Whole30';
+  } else {
+
+    diet = result
+  }
+   
+  foodApi(diet)
 
 }
 
 
 function foodApi(diet) {
+
+   var restrict = diet
     
-    var requestUrl = 'https://api.spoonacular.com/recipes/random?number=1&diet=Whole30&type=dinner&instructionsRequired=true&apiKey=a939fe0838e141e2b66bcd66bed659ff';
-  
+    var requestUrl = 'https://api.spoonacular.com/recipes/random?number=1&diet=' + restrict + '&type=dinner&instructionsRequired=true&apiKey=a939fe0838e141e2b66bcd66bed659ff';
+   
     fetch(requestUrl)
       .then(function (response) {
         return response.json();
@@ -34,4 +50,6 @@ function foodApi(diet) {
       });
   }
   
-  foodApi(diet)
+
+
+  submitBtn.addEventListener('click', dietRestrict)

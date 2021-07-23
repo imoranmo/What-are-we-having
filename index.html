@@ -17,7 +17,7 @@
 <body>
   <!--[START] FIRST PAGE [START]-->
   <section class="section first-page">
-    <div class="container menu hide">
+    <div class="container menu show">
         <!--Title, Subtitle, Description-->
         <h1 class="title">
             What Are We Having?
@@ -35,10 +35,10 @@
             <div class="control">
               <div class="select">
                   <select>
-                    <option>Select...</option>
-                    <option>No Restrictions</option>
-                    <option>Vegetarian</option>
-                    <option>Vegan</option>
+                    <option meal = "main">Select...</option>
+                    <option meal = "Whole30">No Restrictions</option>
+                    <option meal = "Vegetarian">Vegetarian</option>
+                    <option meal = "Vegan">Vegan</option>
                   </select>
                 </div>
             </div>
@@ -67,7 +67,7 @@
   <!--[END] FIRST PAGE [END]-->
   
   <!--[START] MAIN PAGE [START]-->
-  <section class="section main-page show">
+  <section class="section main-page hide">
     <!--Saved Recipes-->
     <div class="container saved-recipes">
       <div class = "sr-text">
@@ -85,11 +85,11 @@
       </div>
       <div class="column m-text">
         <h3>Meal Recipe</h3>
-        <p>Name:</p>
-        <p>Summary:</p>
-        <p>Link:</p>
+        <p class ="foodname">Name:</p>
+        <p class ="foodsummary">Summary:</p>
+        <p class ="foodlink">Link:</p>
         <div class = "buttons1">
-          <button class="button">Save</button>  <button class="button">Different Recipe</button>
+          <button class="button FoodSave">Save</button>  <button class="button">Different Recipe</button>
       </div>
         </div>
       
@@ -118,6 +118,8 @@
 
 
   </section>
+
+  <script src="./food.js"></script>
 </body>
 </html>
 

@@ -1,2 +1,2 @@
 # What-are-we-having
-Testing for branch
+I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming. 

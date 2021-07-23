@@ -60,30 +60,43 @@ h3{
     color: #000;
 }
 .saved-recipes {
-  border-color: #66cc99;
-  background-color:  #66cc99;
+  background: rgba(102, 204, 153, 0.95);
   position: absolute;
-  border-style: double;
   border-radius: 5px;
   top: 0;
   left: 0;
   width: 30%;
-  height: 98%;
+  height: 97%;
   margin: 1%;
  
 }
-.m-recipe {
-    border-color: #66cc99;
-    background-color:  #66cc99;
+.buttons1{
     position: absolute;
-    border-style: double;
+    top: 85%;
+    left: 56%;
+  
+}
+.buttons2{
+    position: absolute;
+    top: 85%;
+    left: 23%;
+  
+}
+.sr-text{
+    margin: 2%;
+}
+.m-text {
+    
+}
+.m-recipe {
+    background: rgba(102, 204, 153, 0.95);
+    position: absolute;
     border-radius: 5px;
     top: 0;
     left: 31.5%;
     width: 66.5%;
-    height: 48%;
+    height: 47%;
     margin: 1%;
-  
     
 }
 #meal{
@@ -93,18 +106,19 @@ h3{
     overflow: hidden
 }
 #meal-pic{
+    border-radius: 5px;
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%
 }
 .d-recipe {
-    background-color:  #66cc99;
+    background: rgba(102, 204, 153, 0.95);
     position: absolute;
     border-radius: 5px;
     top: 50%;
     left: 31.5%;
     width: 66.5%;
-    height: 48%;
+    height: 47%;
     margin: 1%;
 }
 
@@ -112,9 +126,10 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
 }
 #drink-pic{
+    border-radius: 5px;
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%

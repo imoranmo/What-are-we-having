@@ -22,9 +22,9 @@
         <h1 class="title">
             What Are We Having?
         </h1>
-        <h3 class="subtitle">
+        <h4 class="subtitle">
         Meal and Drink Recipes
-        </h3>
+        </h4>
         <p>
           Tired of spending a lot of time thinking about what to eat? Can't decide what to cook tonight? Let us help you! Enter your diet and drink preference below and we'll provide you some recipes to try out!
         </p>
@@ -42,6 +42,7 @@
                   </select>
                 </div>
             </div>
+            <br>
         <!--Drink Preference Input-->
         <div class="field">
           <label class="label">Drink Preference</label>
@@ -66,34 +67,44 @@
   <!--[END] FIRST PAGE [END]-->
   
   <!--[START] MAIN PAGE [START]-->
-  <section class="section main-page">
+  <section class="section main-page show">
     <!--Saved Recipes-->
-    <div class="container saved-recipes show">
+    <div class="container saved-recipes">
       <div class = "sr-text">
       <h3>Saved Recipes</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis id quam quas exercitationem tempora, expedita nemo quae, necessitatibus, eum quos ad non ut ab nihil nostrum aliquid maxime delectus? Distinctio?</p>
+      <ul>
+        <li>1.</li>
+      </ul>
     </div>
   </div>
 
-    <!--Food Picture-->
-    <div class="columns m-recipe show">
+    <!--Meal Recipe-->
+    <div class="columns m-recipe">
       <div class="column is-one-third" id="meal">
         <img src ="food-pic.jpg" id="meal-pic">
       </div>
-      <div class="column">
+      <div class="column m-text">
         <h3>Meal Recipe</h3>
         <p>Name:</p>
         <p>Summary:</p>
         <p>Link:</p>
+        <div class = "buttons1">
+          <button class="button">Save</button>  <button class="button">Different Recipe</button>
+      </div>
+        </div>
+      
       </div>
     </div>
-    <!--Food Picture-->
-    <div class="columns d-recipe show">
+    <!--Drink Recipe-->
+    <div class="columns d-recipe">
       <div class="column">
         <h3>Drink Recipe</h3>
         <p>Name:</p>
         <p>Summary:</p>
         <p>Link:</p>
+        <div class = "buttons2">
+          <button class="button">Save</button>  <button class="button">Different Recipe</button>
+      </div>
       </div>
       <div class="column is-one-third" id="drink">
         <img src ="drink-pic.jpg" id="drink-pic">

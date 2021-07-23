@@ -33,10 +33,10 @@
             <label class="label">Beverage Preference</label>
             <div class="control">
               <div class="select">
-                <select>
+                <select id="bevPref">
                   <option>Select...</option>
-                  <option>Alcoholic</option>
-                  <option>Non-Alcoholic</option>
+                  <option value="Alcoholic">Alcoholic</option>
+                  <option value="Non_Alcoholic">Non-Alcoholic</option>
                 </select>
               </div>
             </div>
@@ -48,7 +48,9 @@
             </div>
           </div>
 
+          <section id="drinkBox"></section>
           <div id="drink"></div>
+          
     </div>
   </section>
   <section class ="section">
@@ -67,6 +69,7 @@
 
     </div>
   </section>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="./script.js"></script>
   </body>
 </html>

@@ -17,11 +17,9 @@ function dietRestrict() {
   }
    
 
-
   foodApi(diet)
 
 }
-
 
 function foodApi(diet) {
 

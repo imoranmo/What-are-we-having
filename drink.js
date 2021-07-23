@@ -44,10 +44,10 @@ function displayAlcoholicCocktail(cocktail){
 	console.log(cocktail.drinks[num]);
 
 	//grabs section to put info in
-	let drinkSection = document.querySelector('.drinkname');
+	let drinkSection = document.querySelector('.drink-name');
 
 	// displays the name
-	let drinkName = document.createElement('p');
+	let drinkName = document.createElement('span');
 	drinkName.innerHTML = cocktail.drinks[num].strDrink;
 
 	drinkSection.appendChild(drinkName);
@@ -77,7 +77,8 @@ function displayAlcoholicCocktail(cocktail){
 				ingredient.innerHTML =drink.drinks[0][`strMeasure${i}`] + ': ' +drink.drinks[0][`strIngredient${i}`];
 
 				//appends 
-				drinkSection.appendChild(ingredient);
+				var drinkIngr = document.getElementById("drink-ingr")
+				drinkIngr.appendChild(ingredient);
 			
 			}
 		}

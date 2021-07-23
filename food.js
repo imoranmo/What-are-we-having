@@ -36,7 +36,7 @@ function foodApi(diet) {
         var img = document.getElementById("meal-pic");
         img.src = data.recipes[0].image;
 
-        var summary = document.createElement('p');
+        var summary = document.createElement('span');
         summary.innerHTML = data.recipes[0].summary;
         foodSummary.appendChild(summary);
 

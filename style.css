@@ -86,7 +86,7 @@ h3{
     margin: 2%;
 }
 .m-text {
-    
+    overflow-y: scroll;
 }
 .m-recipe {
     background: rgba(102, 204, 153, 0.95);

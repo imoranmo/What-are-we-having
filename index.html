@@ -17,7 +17,7 @@
 <body>
   <!--[START] FIRST PAGE [START]-->
   <section class="section first-page">
-    <div class="container menu hide">
+    <div class="container menu show">
         <!--Title, Subtitle, Description-->
         <h1 class="title">
             What Are We Having?
@@ -34,11 +34,11 @@
           <label class="label">Diet Preference</label>
             <div class="control">
               <div class="select">
-                  <select>
+                  <select id = "dietPref">
                     <option>Select...</option>
-                    <option>No Restrictions</option>
-                    <option>Vegetarian</option>
-                    <option>Vegan</option>
+                    <option value ="1">No Restrictions</option>
+                    <option value="2">Vegetarian</option>
+                    <option value="3">Vegan</option>
                   </select>
                 </div>
             </div>
@@ -48,7 +48,7 @@
           <label class="label">Drink Preference</label>
             <div class="control">
               <div class="select">
-                <select>
+                <select id="drinkPref">
                   <option>Select...</option>
                   <option>Alcoholic</option>
                   <option>Non-Alcoholic</option>
@@ -67,7 +67,7 @@
   <!--[END] FIRST PAGE [END]-->
   
   <!--[START] MAIN PAGE [START]-->
-  <section class="section main-page show">
+  <section class="section main-page hide">
     <!--Saved Recipes-->
     <div class="container saved-recipes">
       <div class = "sr-text">
@@ -118,6 +118,8 @@
 
 
   </section>
+
+<script src="script.js"></script>
 </body>
 </html>
 

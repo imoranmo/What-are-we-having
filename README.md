@@ -22,7 +22,7 @@ Process:
 
 
 We used multiple server-side APIs
-We used spoonacular and thecocktaildb APIs to generate what the user will use.
+We used spoonacular and thecocktaildb APIs to generate what the user will use in the website.
 We used Bulma.io as our CSS framework.
 
 

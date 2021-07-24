@@ -9,6 +9,11 @@ function beverageChoice() {
 	var bevSelect = document.getElementById('Drink');
 	var bevOption = bevSelect.options[bevSelect.selectedIndex];
 	var bevChoice = bevOption.value;
+
+    if (bevChoice = "Non-Alcoholic"){
+
+        bevChoice = "Non_Alcoholic"
+    }
 	getAlcoholicCocktail(bevChoice)
 }
 

@@ -4,9 +4,11 @@ var submitBtn = document.querySelector ('#submit')
 
 function dietRestrict() {
   var f= document.getElementById("food");
+  var d= document.getElementById("Drink");
   var result = f.options[f.selectedIndex].value;
+  var result2 = d.options[d.selectedIndex].value;
   
-  if(result === 'Select...'){
+  if(result === 'Select...' || result2 === 'Select...'){
     return
   } else if ( result === 'No Restrictions'){
 

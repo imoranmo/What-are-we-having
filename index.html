@@ -1,54 +1,132 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>What Are We Having?</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-        <h1 class="title">
-        What Are We Having?
-      </h1>
-      <p class="subtitle">
-       Meal and Drink Recipes
+<html lang="en">
 
-          <div class="field">
-            <label class="label">Diet Preference</label>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>What Are We Having?</title>
+</head>
+
+<body>
+  <!--[START] FIRST PAGE [START]-->
+  <section class="section first-page">
+    <div class="container menu show">
+        <!--Title, Subtitle, Description-->
+        <h1 class="title">
+            What Are We Having?
+        </h1>
+        <h4 class="subtitle">
+        Meal and Drink Recipes
+        </h4>
+        <p>
+          Tired of spending a lot of time thinking about what to eat? Can't decide what to cook tonight? Let us help you! Enter your diet and drink preference below and we'll provide you some recipes to try out!
+        </p>
+        <br>
+        <!--Diet Preference Input-->
+        <div class="field">
+          <label class="label">Diet Preference</label>
             <div class="control">
               <div class="select">
-                <select>
+                  <select id ="food">
+                    <option value = "main">Select...</option>
+                    <option value = "Whole30">No Restrictions</option>
+                    <option value = "Vegetarian">Vegetarian</option>
+                    <option value = "Vegan">Vegan</option>
+                  </select>
+                </div>
+            </div>
+            <br>
+        <!--Drink Preference Input-->
+        <div class="field">
+          <label class="label">Drink Preference</label>
+            <div class="control">
+              <div class="select">
+                <select id ="Drink">
                   <option>Select...</option>
-                  <option>No Restrictions</option>
-                  <option>Vegetarian</option>
-                  <option>Vegan</option>
+                  <option value = "Alcoholic">Alcoholic</option>
+                  <option value = "Non_Alcoholic">Non-Alcoholic</option>
                 </select>
               </div>
             </div>
+        </div>    
+        <!--Submit Button-->
+        <div class="field">
+          <div class="control">
+            <button class="button is-link" id="submit">Submit</button>
           </div>
-          
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-link">Submit</button>
-              <h1>Cocktail</h1>
-              <div>
-              </div>
-              <h2>Name</h2>
-              <img src="" alt="">
-              <h3>Instructions</h3>
-              <h4>Measurements</h4>
-              <h5>Ingredients</h5>
-              <script type="text/javascript" src="script.js"></script>
-            </div>
-          </div>
+        </div>
+      </div>
+  </section>
+  <!--[END] FIRST PAGE [END]-->
+  
+  <!--[START] MAIN PAGE [START]-->
+  <section class="section main-page hide">
+    <!--Saved Recipes-->
+    <div class="container saved-recipes">
+      <div class = "sr-text">
+      <h3>Saved Recipes</h3>
+      <ul>
+        <li>1.</li>
+      </ul>
+    </div>
+  </div>
 
+    <!--Meal Recipe-->
+    <div class="columns m-recipe">
+      <div class="column is-one-third" id="meal">
+        <img src ="food-pic.jpg" id="meal-pic">
+      </div>
+      <div class="column">
+        <h3>Meal Recipe</h3>
+        <div class = "m-text">
+        <p class ="foodname"><b><u>Name:</b></u> <a class ="foodNameSpan"></a> </p>
+        <p class ="foodsummary"><b><u>Summary:</u></b> <span class ="foodSumSpan"></span> </p>
+        <div class = "buttons1">
+          <button class="button FoodSave">Save</button>  <button class="button" id="diffFood">Different Recipe</button>
+      </div>
     </div>
-  </section>
-  <section class ="section">
-    <div class="container">
+        </div>
+      
+      </div>
     </div>
+    <!--Drink Recipe-->
+    <div class="columns d-recipe">
+      
+      <div class="column ">
+        <h3>Drink Recipe</h3>
+        <div class = "d-text">
+        <p class="drink-name"><b><u>Name:</u></b> <span class ="drinkNameSpan"></span></p>
+        <p class="drink-ingr"><b><u>Ingredients:</u></b> </p>
+        <ul class ="drinkIngrUL"></ul>
+        <p class="drink-inst"><b><u>Instructions:</u></b> <span class ="drinkInstSpan"></span></p>
+        <div class = "buttons2">
+          <button class="button drink-save">Save</button>  <button class="button" id="diffDrink">Different Recipe</button>
+      </div>
+    </div>
+      </div>
+      <div class="column is-one-third" id="drink">
+        <img src ="drink-pic.jpg" id="drink-pic">
+      </div>
+      
+    </div>
+
+</div>
+
+
+
+
   </section>
-  </body>
+
+  <script src="food.js"></script>
+  <script src="drink.js"></script>
+</body>
 </html>
+
+

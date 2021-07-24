@@ -1,11 +1,13 @@
-var foodName = document.querySelector('.foodname')
-var foodSummary = document.querySelector('.foodsummary')
-var submitBtn = document.querySelector ('#submit')
-var foodsave = document.querySelector ('#list')
-var foodsaveBtn = document.querySelector('#foodsavebtn')
-var foodarray =[]
+var foodName = document.querySelector('.foodname');
+var foodSummary = document.querySelector('.foodsummary');
+var submitBtn = document.querySelector ('#submit');
+var foodsave = document.querySelector ('#list');
+var foodsaveBtn = document.querySelector('.FoodSave');
+var foodarray =[];
+var savedfoodarray =[] ;
 
-function dietRestrict() {
+function dietRestrict(event) {
+  event.preventDefault();
   var f= document.getElementById("food");
   var d= document.getElementById("Drink");
   var result = f.options[f.selectedIndex].value;
@@ -63,23 +65,25 @@ function foodApi(diet) {
         foodName.appendChild(link);
         var title = data.recipes[0].title.trim();
         foodarray.push(title)
-
-        console.log(foodarray)
       });
   }
   
  function saveRecipe() {
 
-  var foodlength = foodarray.length
-  console.log(foodarray)
-  var title = foodarray[foodlength]
-  console.log(foodlength)
-  console.log(title)
-  var newfood= document.createElement('button')
+  var foodlength = foodarray.length -1;
+  var title = foodarray[foodlength];
+  console.log(title);
+  console.log (savedfoodarray.includes(title));
+  console.log(savedfoodarray);
+
+ if (!savedfoodarray.includes(title)){
+  var newfood= document.createElement('button');
   newfood.textContent = title;
   foodsave.appendChild(newfood);
-
+  savedfoodarray.push(title);
+ 
+ }
  };
 
 submitBtn.addEventListener('click', dietRestrict)
-foodsaveBtn.onclick = saveRecipe()
+foodsaveBtn.addEventListener('click',saveRecipe)

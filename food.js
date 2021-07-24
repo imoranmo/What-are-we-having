@@ -36,7 +36,7 @@ function foodApi(diet) {
   var requestUrl =
     "https://api.spoonacular.com/recipes/random?number=1&diet=" +
     restrict +
-    "&type=dinner&instructionsRequired=true&apiKey=c1a6609bf5cd459b8edf7e10b8005c91";
+    "&type=dinner&instructionsRequired=true&apiKey=2885da72338b435ab38ea1f0941ae70b";
 
   fetch(requestUrl)
     .then(function (response) {

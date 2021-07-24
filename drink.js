@@ -1,6 +1,9 @@
 //variable for getting drink on submit button
 var getDrinkBtn = document.querySelector('#submit');
 
+//variable for gettign drink on Instruction section
+var drinkInstructions = document.querySelector('.drinkInstructions');
+
 //adds event listener to submit button that when clicked, the beveragechoice functoin is added
 getDrinkBtn.addEventListener('click', beverageChoice);
 
@@ -50,7 +53,6 @@ function displayAlcoholicCocktail(cocktail){
 
 	//grabs section to put info in
 	let drinkSection = document.querySelector('.drinkname');
-
 	// displays the name
 	let drinkName = document.createElement('p');
 	drinkName.innerHTML = cocktail.drinks[num].strDrink;
@@ -73,7 +75,7 @@ function displayAlcoholicCocktail(cocktail){
 			for (let i=1; i<16; i++) {
 				console.log(drink);
 				// if there are no ingredient aka null, then don't display
-				if(drink.drinks[0][`strIngredient${i}`] == null) {
+				if(drink.drinks[0][`strIngredient${i}`]== null || drink.drinks[0][`strMeasure${i}`]== null) {
 					break;
 				}
 				
@@ -83,8 +85,14 @@ function displayAlcoholicCocktail(cocktail){
 
 				//appends 
 				drinkSection.appendChild(ingredient);
-			
 			}
+			// instructions are put in paragraph tag
+			let instruction = document.createElement('p');
+			instruction.innerHTML = drink.drinks[0].strInstructions;
+
+			drinkInstructions.appendChild(instruction);
+			console.log(drink.drinks[0].strInstructions);
+		
 		}
 	)
 }

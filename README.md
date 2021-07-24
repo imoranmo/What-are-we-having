@@ -16,7 +16,7 @@ Motivation:
 
 Have you or your partner ever have problems figuring out what you want to eat?
 Have to fear our website is here!
-What Are We Having will help you decide what food/drink you can try and save to go back to in the future.
+What Are We Having will help you decide what food/drink you can try and save. The user will be able to go back to in the future.
 
 Process:
 

@@ -86,10 +86,10 @@
       <div class="column">
         <h3>Meal Recipe</h3>
         <div class = "m-text">
-        <p class ="foodname"><b><u>Name:</b></u> </p>
-        <p class ="foodsummary"><b><u>Summary:</u></b> </p>
+        <p class ="foodname"><b><u>Name:</b></u> <a class ="foodNameSpan"></a></p>
+        <p class ="foodsummary"><b><u>Summary:</u></b> <span class ="foodSumSpan"></span></p>
         <div class = "buttons1">
-          <button class="button FoodSave">Save</button>  <button class="button">Different Recipe</button>
+          <button class="button FoodSave">Save</button>  <button class="button" id="diffFood">Different Recipe</button>
       </div>
     </div>
         </div>
@@ -105,7 +105,7 @@
         <p class="drink-name"><b><u>Name:</u></b> </p>
         <p class="drink-ingr"><b><u>Ingredients:</u></b> </p>
         <div class = "buttons2">
-          <button class="button">Save</button>  <button class="button">Different Recipe</button>
+          <button class="button drink-save">Save</button>  <button class="button" id="diff-drink">Different Recipe</button>
       </div>
     </div>
       </div>
@@ -122,8 +122,8 @@
 
   </section>
 
-  <script src="./food.js"></script>
-  <script src="./drink.js"></script>
+  <script src="food.js"></script>
+  <script src="drink.js"></script>
 </body>
 </html>
 

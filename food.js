@@ -51,7 +51,7 @@ function foodApi(diet) {
       // var link = document.createElement('a');
       // var namelink = document.createTextNode(data.recipes[0].title);//
       //  link.appendChild(namelink);//
-      foodNameSpan.innerHTML = data.recipes[0].title;
+      foodNameSpan.innerHTML = data.recipes[0].title.toUpperCase();
       //link.title = data.recipes[0].title;//
       foodNameSpan.href = data.recipes[0].sourceUrl;
 
@@ -59,7 +59,6 @@ function foodApi(diet) {
 
 	  
     });
-    
 }
 
 submitBtn.addEventListener("click", dietRestrict);

@@ -72,13 +72,13 @@ h3{
 }
 .buttons1{
     position: absolute;
-    top: 85%;
+    top: 87%;
     left: 56%;
   
 }
 .buttons2{
     position: absolute;
-    top: 85%;
+    top: 87%;
     left: 23%;
   
 }
@@ -86,7 +86,15 @@ h3{
     margin: 2%;
 }
 .m-text {
-    
+   word-wrap: break-word;
+    border-style: double;
+    border-color: #66cc99;
+    padding: 3%;
+    border-radius: 5px;
+    background-color: white;
+    height: 74%;
+    width: 100%;
+    overflow-y: scroll;
 }
 .m-recipe {
     background: rgba(102, 204, 153, 0.95);
@@ -99,8 +107,12 @@ h3{
     margin: 1%;
     
 }
+.foodsummary {
+    
+}
 #meal{
     display: flex;
+    padding: 14px;
     justify-content: center;
     align-items: center;
     overflow: hidden
@@ -121,8 +133,18 @@ h3{
     height: 47%;
     margin: 1%;
 }
-
+.d-text {
+    padding:3%;
+    border-color: #66cc99;
+    border-style: double;
+    border-radius: 5px;
+    background-color: white;
+    height: 74%;
+    width: 100%;
+    overflow-y: scroll;
+}
 #drink{
+    padding: 14px;
     display: flex;
     justify-content: center;
     align-items: center;

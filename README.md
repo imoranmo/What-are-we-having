@@ -1,2 +1,8 @@
-# What-are-we-having
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming. 
+What Are We Having?
+
+Objective:
+
+To generate a meal and drink recipe based on diet and drink preferences
+
+Experience:
+

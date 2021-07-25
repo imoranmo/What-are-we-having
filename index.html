@@ -35,10 +35,10 @@
             <div class="control">
               <div class="select">
                   <select id ="food">
-                    <option meal = "main">Select...</option>
-                    <option meal = "Whole30">No Restrictions</option>
-                    <option meal = "Vegetarian">Vegetarian</option>
-                    <option meal = "Vegan">Vegan</option>
+                    <option value = "main">Select...</option>
+                    <option value = "Whole30">No Restrictions</option>
+                    <option value = "Vegetarian">Vegetarian</option>
+                    <option value = "Vegan">Vegan</option>
                   </select>
                 </div>
             </div>
@@ -50,8 +50,8 @@
               <div class="select">
                 <select id ="Drink">
                   <option>Select...</option>
-                  <option>Alcoholic</option>
-                  <option>Non-Alcoholic</option>
+                  <option value = "Alcoholic">Alcoholic</option>
+                  <option value = "Non_Alcoholic">Non-Alcoholic</option>
                 </select>
               </div>
             </div>
@@ -71,8 +71,11 @@
     <!--Saved Recipes-->
     <div class="container saved-recipes">
       <div class = "sr-text">
-      <h3>Saved Recipes</h3>
-      <ul id="list">
+      <h3>Saved Food Recipes</h3>
+      <ul id="foodlist">
+      </ul>
+      <h3>Saved Drink Recipes</h3>
+      <ul id="drinklist">
       </ul>
     </div>
   </div>
@@ -82,28 +85,33 @@
       <div class="column is-one-third" id="meal">
         <img src ="food-pic.jpg" id="meal-pic">
       </div>
-      <div class="column m-text">
+      <div class="column">
         <h3>Meal Recipe</h3>
-        <p class ="foodname">Name:</p>
-        <p class ="foodsummary">Summary:</p>
-        <p class ="foodlink">Link:</p>
+        <div class = "m-text">
+        <p class ="foodname"><b><u>Name:</b></u> <a class ="foodNameSpan"></a> </p>
+        <p class ="foodsummary"><b><u>Summary:</u></b> <span class ="foodSumSpan"></span> </p>
         <div class = "buttons1">
-          <button class="button FoodSave">Save</button>  <button class="button">Different Recipe</button>
+          <button class="button FoodSave">Save</button>  <button class="button" id="diffFood">Different Recipe</button>
       </div>
+    </div>
         </div>
       
       </div>
     </div>
     <!--Drink Recipe-->
     <div class="columns d-recipe">
-      <div class="column">
+      
+      <div class="column ">
         <h3>Drink Recipe</h3>
-        <p class="drinkname">Name:</p>
-        <p >Summary:</p>
-        <p>Link:</p>
+        <div class = "d-text">
+        <p class="drink-name"><b><u>Name:</u></b> <span class ="drinkNameSpan"></span></p>
+        <p class="drink-ingr"><b><u>Ingredients:</u></b> </p>
+        <ul class ="drinkIngrUL"></ul>
+        <p class="drink-inst"><b><u>Instructions:</u></b> <span class ="drinkInstSpan"></span></p>
         <div class = "buttons2">
-          <button class="button ">Save</button>  <button class="button">Different Recipe</button>
+          <button class="button drink-save">Save</button>  <button class="button" id="diffDrink">Different Recipe</button>
       </div>
+    </div>
       </div>
       <div class="column is-one-third" id="drink">
         <img src ="drink-pic.jpg" id="drink-pic">
@@ -118,8 +126,8 @@
 
   </section>
 
-  <script src="./food.js"></script>
-  <script src="./drink.js"></script>
+  <script src="food.js"></script>
+  <script src="drink.js"></script>
 </body>
 </html>
 

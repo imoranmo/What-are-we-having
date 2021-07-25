@@ -2,7 +2,15 @@ var submitBtn1 = document.querySelector("#submit");
 var drinkNameSpan = document.querySelector(".drinkNameSpan");
 var drinkIngrUL = document.querySelector(".drinkIngrUL");
 var drinkInstSpan = document.querySelector(".drinkInstSpan");
+var drinksavelist = document.querySelector('#drinklist');
+var drinksaveBtn = document.querySelector('.drink-save');
+var drinkarray=[];
+var drinkidarray =[];
+var saveddrinkarray=[];
+var savedIDarray =[];
+
 submitBtn1.addEventListener("click", drinkChoice);
+
 
 function drinkChoice() {
   var d = document.getElementById("Drink");
@@ -34,6 +42,10 @@ function displayCocktail(cocktail) {
 
   drinkNameSpan.innerHTML = cocktail.drinks[num].strDrink;
   drinkSection.appendChild(drinkName);
+  var cocktailname = cocktail.drinks[num].strDrink;
+  drinkarray.push(cocktailname);
+  var cocktailid = cocktail.drinks[num].idDrink;
+  drinkidarray.push(cocktailid);
 
   let img = document.getElementById("drink-pic");
   img.src = cocktail.drinks[num].strDrinkThumb;
@@ -70,23 +82,36 @@ function displayCocktail(cocktail) {
          drink.drinks[0][`strMeasure${i}`] +
           " " +
         drink.drinks[0][`strIngredient${i}`];
-		//var drinkIngr = document.querySelector(".drink-ingr")
-		drinkIngrUL.appendChild(listEl);
-
-        //var drinkIngr = document.querySelector(".drink-ingr");
-        //drinkIngr.appendChild(listEl);
-        //console.log(drinkIngr);
+		
+		    drinkIngrUL.appendChild(listEl);
       }
 
-      //var drinkInst = document.querySelector('.drink-inst');
-      //let instruction = document.createElement('p');
       drinkInstSpan.innerHTML = drink.drinks[0].strInstructions;
 
-      //drinkInst.appendChild(instruction);
     });
 }
 diffDrink.addEventListener("click", drinkChoice);
+drinksaveBtn.addEventListener('click',saveRecipe);
 
-/*let listEl = document.createElement("li");
-listEl.innerHTML = "";
-console.log("test");*/
+function saveRecipe() {
+
+  var drinklength = drinkarray.length -1;
+  var title = drinkarray[drinklength];
+  var id = drinkidarray[drinklength];
+  console.log(title);
+  console.log (drinkarray.includes(title));
+  console.log(saveddrinkarray);
+
+ if (!saveddrinkarray.includes(title)){
+  var newdrink= document.createElement('button');
+  newdrink.textContent = title;
+  newdrink.setAttribute('ID', id)
+  drinksavelist.appendChild(newdrink);
+  saveddrinkarray.push(title);
+  savedIDarray.push(id);
+  localStorage.setItem('drink IDs', savedIDarray);
+  localStorage.setItem('drink recipes', saveddrinkarray);
+ 
+ }
+ };
+

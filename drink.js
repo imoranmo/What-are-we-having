@@ -85,7 +85,7 @@ function displayCocktail(cocktail) {
     });
 }
 
-function saveRecipe() {
+function saveDrinkRecipe() {
 
   var drinklength = drinkarray.length -1;
   var title = drinkarray[drinklength];
@@ -104,13 +104,14 @@ function saveRecipe() {
  }
  };
 
- function getsavedRecipe() {
+ function getsavedDrinkRecipe() {
 
   var storeddrinkarray = JSON.parse(localStorage.getItem("drink recipes"));
 
   console.log(title);
   console.log (drinkarray.includes(title));
   console.log(saveddrinkarray);
+  console.log(storeddrinkarray);
 
   if (storeddrinkarray === null){
 
@@ -118,11 +119,12 @@ function saveRecipe() {
    }
     if (storeddrinkarray !== null) {
       saveddrinkarray = storeddrinkarray;
+      console.log(saveddrinkarray);
     }
   
  if (saveddrinkarray !== ""){
 
-  for (var i = 0; i <= saveddrinkarray.length; i++){
+  for (var i = 0; i < saveddrinkarray.length; i++){
   var title = saveddrinkarray[i];
   var newdrink= document.createElement('button');
   newdrink.textContent = title;
@@ -171,7 +173,7 @@ function saveRecipe() {
           }
           if (data.drinks[0][`strIngredient${i}`] == null) {
             data.drinks[0][`strIngredient${i}`] = "";
-          } else if (drinks[0][`strMeasure${i}`] == null) {
+          } else if (data.drinks[0][`strMeasure${i}`] == null) {
             data.drinks[0][`strMeasure${i}`] = "";
           }
   
@@ -184,7 +186,7 @@ function saveRecipe() {
           drinkIngrUL.appendChild(listEl);
         }
   
-        drinkInstSpan.innerHTML = drinks[0].strInstructions;
+        drinkInstSpan.innerHTML = data.drinks[0].strInstructions;
   
 
     });
@@ -193,7 +195,7 @@ function saveRecipe() {
 
  submitBtn1.addEventListener("click", drinkChoice);
  diffDrink.addEventListener("click", drinkChoice);
- drinksaveBtn.addEventListener('click',saveRecipe);
+ drinksaveBtn.addEventListener('click',saveDrinkRecipe);
  drinksavelist.addEventListener("click", DrinksavedApi);
 
- getsavedRecipe()
+ getsavedDrinkRecipe()

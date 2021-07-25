@@ -51,7 +51,7 @@ function foodApi(diet) {
   var requestUrl =
     "https://api.spoonacular.com/recipes/random?number=1&diet=" +
     restrict +
-    "&type=dinner&instructionsRequired=true&apiKey=2885da72338b435ab38ea1f0941ae70b";
+    "&type=dinner&instructionsRequired=true&apiKey=a939fe0838e141e2b66bcd66bed659ff";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -97,7 +97,7 @@ function saveRecipe() {
  function getsavedRecipe(){
   var storedfoodarray = JSON.parse(localStorage.getItem("food recipes"));
   var storedIDarray = JSON.parse(localStorage.getItem("food IDs"));
-  
+  console.log(storedIDarray)
  if (storedfoodarray === null){
 
   return
@@ -109,7 +109,7 @@ function saveRecipe() {
 
   if (savedfoodarray !== "" ){
 
-    for (var i = 0; i <= savedfoodarray.length; i++) {
+    for (var i = 0; i < savedfoodarray.length; i++) {
     var newfood= document.createElement('button');
     var title = savedfoodarray[i];
     console.log(savedfoodarray)
@@ -130,7 +130,7 @@ function foodsavedApi(event) {
   var requestUrl =
     "https://api.spoonacular.com/recipes/informationBulk?ids=" +
     id +
-    "&apiKey=2885da72338b435ab38ea1f0941ae70b";
+    "&apiKey=a939fe0838e141e2b66bcd66bed659ff";
 
   fetch(requestUrl)
     .then(function (response) {

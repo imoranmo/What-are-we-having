@@ -1,0 +1,136 @@
+body {
+    background-image: url("lemon1.jpg");
+    background-size: cover;
+    font-family: 'Krub', sans-serif;
+    position: relative;
+}
+h3{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Luckiest Guy', cursive;;
+    color:#000;
+    text-shadow:
+	    -1px -1px 0 #fff,
+	    1px -1px 0 #fff,
+	    -1px 1px 0 #fff,
+	    1px 1px 0 #fff;
+}
+.hide {
+    display: none;
+}
+.show {
+    
+}
+.first-page {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.menu {
+    background-color: #66cc99;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    border-style: double;
+    border-color: #66cc99;
+    height: auto;
+    width: 550px;
+    align-items: center;
+    text-align: center;   
+}
+.title {
+    font-size: 45px;
+    font-family: 'Luckiest Guy', cursive;;
+    color:#000;
+    text-shadow:
+	    -1px -1px 0 #fff,
+	    1px -1px 0 #fff,
+	    -1px 1px 0 #fff,
+	    1px 1px 0 #fff;
+}
+.subtitle {
+
+}
+#submit {
+    background-color: rgb(250, 245, 178);
+    color: #000;
+}
+.saved-recipes {
+  background: rgba(102, 204, 153, 0.95);
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 97%;
+  margin: 1%;
+ 
+}
+.buttons1{
+    position: absolute;
+    top: 85%;
+    left: 56%;
+  
+}
+.buttons2{
+    position: absolute;
+    top: 85%;
+    left: 23%;
+  
+}
+.sr-text{
+    margin: 2%;
+}
+.m-text {
+    
+}
+.m-recipe {
+    background: rgba(102, 204, 153, 0.95);
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    left: 31.5%;
+    width: 66.5%;
+    height: 47%;
+    margin: 1%;
+    
+}
+#meal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+#meal-pic{
+    border-radius: 5px;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+.d-recipe {
+    background: rgba(102, 204, 153, 0.95);
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    left: 31.5%;
+    width: 66.5%;
+    height: 47%;
+    margin: 1%;
+}
+
+#drink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#drink-pic{
+    border-radius: 5px;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}

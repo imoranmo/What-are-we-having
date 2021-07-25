@@ -5,11 +5,7 @@ var drinkInstSpan = document.querySelector(".drinkInstSpan");
 var drinksavelist = document.querySelector('#drinklist');
 var drinksaveBtn = document.querySelector('.drink-save');
 var drinkarray=[];
-var drinkidarray =[];
 var saveddrinkarray=[];
-var savedIDarray =[];
-
-submitBtn1.addEventListener("click", drinkChoice);
 
 
 function drinkChoice() {
@@ -44,8 +40,6 @@ function displayCocktail(cocktail) {
   drinkSection.appendChild(drinkName);
   var cocktailname = cocktail.drinks[num].strDrink;
   drinkarray.push(cocktailname);
-  var cocktailid = cocktail.drinks[num].idDrink;
-  drinkidarray.push(cocktailid);
 
   let img = document.getElementById("drink-pic");
   img.src = cocktail.drinks[num].strDrinkThumb;
@@ -90,14 +84,11 @@ function displayCocktail(cocktail) {
 
     });
 }
-diffDrink.addEventListener("click", drinkChoice);
-drinksaveBtn.addEventListener('click',saveRecipe);
 
-function saveRecipe() {
+function saveDrinkRecipe() {
 
   var drinklength = drinkarray.length -1;
   var title = drinkarray[drinklength];
-  var id = drinkidarray[drinklength];
   console.log(title);
   console.log (drinkarray.includes(title));
   console.log(saveddrinkarray);
@@ -105,13 +96,106 @@ function saveRecipe() {
  if (!saveddrinkarray.includes(title)){
   var newdrink= document.createElement('button');
   newdrink.textContent = title;
-  newdrink.setAttribute('ID', id)
+  newdrink.setAttribute('name', title)
   drinksavelist.appendChild(newdrink);
   saveddrinkarray.push(title);
-  savedIDarray.push(id);
-  localStorage.setItem('drink IDs', savedIDarray);
-  localStorage.setItem('drink recipes', saveddrinkarray);
+  localStorage.setItem('drink recipes', JSON.stringify(saveddrinkarray));
  
  }
  };
 
+ function getsavedDrinkRecipe() {
+
+  var storeddrinkarray = JSON.parse(localStorage.getItem("drink recipes"));
+
+  console.log(title);
+  console.log (drinkarray.includes(title));
+  console.log(saveddrinkarray);
+  console.log(storeddrinkarray);
+
+  if (storeddrinkarray === null){
+
+    return
+   }
+    if (storeddrinkarray !== null) {
+      saveddrinkarray = storeddrinkarray;
+      console.log(saveddrinkarray);
+    }
+  
+ if (saveddrinkarray !== ""){
+
+  for (var i = 0; i < saveddrinkarray.length; i++){
+  var title = saveddrinkarray[i];
+  var newdrink= document.createElement('button');
+  newdrink.textContent = title;
+  newdrink.setAttribute('name', title)
+  drinksavelist.appendChild(newdrink);
+ 
+ }}
+ };
+
+ function DrinksavedApi(event) {
+  var name = event.target.getAttribute ('name');
+
+  var requestUrl =
+    "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" +
+    name ;
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+     
+      let drinkSection = document.querySelector(".drink-name");
+      let drinkName = document.createElement("span");
+
+
+      console.log(data)
+      console.log(data.drinks[0].strDrink)
+      drinkNameSpan.innerHTML = data.drinks[0].strDrink;
+      
+      drinkSection.appendChild(drinkName);
+
+      let img = document.getElementById("drink-pic");
+      img.src = data.drinks[0].strDrinkThumb;
+      
+      drinkIngrUL.innerHTML = "";
+  
+        for (let i = 1; i < 16; i++) {
+          console.log(drink);
+  
+          if (
+            data.drinks[0][`strIngredient${i}`] == null &&
+            data.drinks[0][`strMeasure${i}`] == null
+          ) {
+            break;
+          }
+          if (data.drinks[0][`strIngredient${i}`] == null) {
+            data.drinks[0][`strIngredient${i}`] = "";
+          } else if (data.drinks[0][`strMeasure${i}`] == null) {
+            data.drinks[0][`strMeasure${i}`] = "";
+          }
+  
+          let listEl = document.createElement("li");
+          listEl.innerHTML =
+           data.drinks[0][`strMeasure${i}`] +
+            " " +
+          data.drinks[0][`strIngredient${i}`];
+      
+          drinkIngrUL.appendChild(listEl);
+        }
+  
+        drinkInstSpan.innerHTML = data.drinks[0].strInstructions;
+  
+
+    });
+}
+
+
+ submitBtn1.addEventListener("click", drinkChoice);
+ diffDrink.addEventListener("click", drinkChoice);
+ drinksaveBtn.addEventListener('click',saveDrinkRecipe);
+ drinksavelist.addEventListener("click", DrinksavedApi);
+
+ getsavedDrinkRecipe()

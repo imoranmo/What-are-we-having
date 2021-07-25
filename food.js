@@ -37,6 +37,8 @@ function dietRestrict(event) {
   if (mainPage.classList.contains("hide")) {
       mainPage.classList.remove("hide");
       mainPage.classList.add("show");
+
+      getsavedRecipe()
   }
 
   foodApi(diet)
@@ -49,7 +51,7 @@ function foodApi(diet) {
   var requestUrl =
     "https://api.spoonacular.com/recipes/random?number=1&diet=" +
     restrict +
-    "&type=dinner&instructionsRequired=true&apiKey=2885da72338b435ab38ea1f0941ae70b";
+    "&type=dinner&instructionsRequired=true&apiKey=a939fe0838e141e2b66bcd66bed659ff";
 
   fetch(requestUrl)
     .then(function (response) {
@@ -86,12 +88,68 @@ function saveRecipe() {
   foodsavelist.appendChild(newfood);
   savedfoodarray.push(title);
   savedIDarray.push(id);
-  localStorage.setItem('food recipes', savedfoodarray);
-  localStorage.setItem('food IDs', savedIDarray);
+  localStorage.setItem('food recipes', JSON.stringify(savedfoodarray));
+  localStorage.setItem('food IDs', JSON.stringify(savedIDarray));
  
  }
  };
 
+ function getsavedRecipe(){
+  var storedfoodarray = JSON.parse(localStorage.getItem("food recipes"));
+  var storedIDarray = JSON.parse(localStorage.getItem("food IDs"));
+  console.log(storedIDarray)
+ if (storedfoodarray === null){
+
+  return
+ }
+  if (storedfoodarray !== null) {
+    savedfoodarray = storedfoodarray;
+    savedIDarray = storedIDarray;
+  }
+
+  if (savedfoodarray !== "" ){
+
+    for (var i = 0; i < savedfoodarray.length; i++) {
+    var newfood= document.createElement('button');
+    var title = savedfoodarray[i];
+    console.log(savedfoodarray)
+    var id = savedIDarray[i] ; 
+    newfood.textContent = title;
+    newfood.setAttribute ('ID', id);
+    foodsavelist.appendChild(newfood);
+   
+    }
+   }
+
+ };
+
+
+function foodsavedApi(event) {
+  var id = event.target.getAttribute ('ID');
+
+  var requestUrl =
+    "https://api.spoonacular.com/recipes/informationBulk?ids=" +
+    id +
+    "&apiKey=a939fe0838e141e2b66bcd66bed659ff";
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var img = document.getElementById("meal-pic");
+      img.src = data[0].image;
+      console.log(data)
+
+      foodSumSpan.innerHTML = data[0].summary;
+      foodNameSpan.innerHTML = data[0].title.toUpperCase();
+      foodNameSpan.href = data[0].sourceUrl;
+    
+
+    });
+}
+
 submitBtn.addEventListener("click", dietRestrict);
 foodsaveBtn.addEventListener('click',saveRecipe);
 diffFood.addEventListener("click", foodApi);
+foodsavelist.addEventListener("click",foodsavedApi)

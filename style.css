@@ -55,9 +55,16 @@ h3{
 .subtitle {
 
 }
-#submit {
+.button, #submit {
     background-color: rgb(250, 245, 178);
     color: #000;
+}
+button {
+    background-color: rgb(250, 245, 178);
+    color: #000;
+    border-radius: 3px;
+    border-style: solid;
+    border-color:  rgb(189, 188, 186);
 }
 .saved-recipes {
   background: rgba(102, 204, 153, 0.95);
@@ -155,4 +162,24 @@ h3{
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%
+}
+#foodlist {
+    border-style: double;
+    border-color: #66cc99;
+    padding: 3%;
+    border-radius: 5px;
+    background-color: white;
+    height: 47vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+#drinklist {
+    border-style: double;
+    border-color: #66cc99;
+    padding: 3%;
+    border-radius: 5px;
+    background-color: white;
+    height: 47vh;
+    width: 100%;
+    overflow-y: scroll;
 }

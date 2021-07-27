@@ -36,6 +36,8 @@ Link:
 
 https://imoranmo.github.io/What-are-we-having/
 
+Github repo: https://github.com/imoranmo/What-are-we-having.git
+
 Screenshots:
 ![image](https://user-images.githubusercontent.com/84609604/126880024-3de0a6a9-6126-43e5-8d48-b737232fe2b3.png)
 
